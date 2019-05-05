@@ -4,12 +4,13 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Spring Demo MVC - Home page</title>
+<title>Hello world</title>
 </head>
 <body>
-	<h2>Spring Demo MVC - Home page</h2>
+	<h2>Hello world from Spring</h2>
 	<hr>
-	<div><a href="hello/showForm">Show Hello World form</a></div>
-	<div><a href="silly/showForm">Show Silly form</a></div>
+	<br />
+	<p>Student name: ${param.studentName}</p>
+	<p>Uppercase student name: ${uppercaseStudentName}</p>
 </body>
 </html>
