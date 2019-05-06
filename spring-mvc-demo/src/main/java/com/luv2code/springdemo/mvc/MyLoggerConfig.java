@@ -21,7 +21,6 @@ public class MyLoggerConfig {
 		this.printedLoggerLevel = printedLoggerLevel;
 	}
 
-	@PostConstruct
 	public void initLogger() {
 
 		// parse levels
