@@ -11,5 +11,6 @@
 	<hr>
 	<div><a href="hello/showForm">Show Hello World form</a></div>
 	<div><a href="silly/showForm">Show Silly form</a></div>
+	<div><a href="student/showForm">Show Student form</a></div>
 </body>
 </html>
