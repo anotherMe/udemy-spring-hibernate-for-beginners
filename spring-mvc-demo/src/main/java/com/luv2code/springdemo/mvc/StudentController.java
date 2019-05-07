@@ -19,8 +19,6 @@ public class StudentController {
 	
 	@RequestMapping("/processForm")
 	public String processForm(@ModelAttribute("student") Student theStudent) {
-		
-		System.out.println("The student is: " + theStudent.getFirstName() + " " + theStudent.getLastName());
 		return "student-confirmation";
 	}
 }
