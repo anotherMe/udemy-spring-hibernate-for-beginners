@@ -4,7 +4,6 @@ import java.util.logging.ConsoleHandler;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import java.util.logging.SimpleFormatter;
-import javax.annotation.PostConstruct;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
 
