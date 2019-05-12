@@ -6,7 +6,7 @@ import org.hibernate.cfg.Configuration;
 
 import com.luv2code.hibernate.demo.entity.Student;
 
-public class CreateStudentDemo {
+public class ReadStudentDemo {
 
 	public static void main(String[] args) {
 		
@@ -19,10 +19,10 @@ public class CreateStudentDemo {
 
 		try {
 			
-			Student student = new Student("Paul", "Weller", "paul@example.com");
 			session.getTransaction().begin();
-			session.save(student);
+			Student student = session.get(Student.class, 1);
 			session.getTransaction().commit();
+			System.out.println(student.getFirstName());
 			
 		} catch (Exception e) {
 			session.getTransaction().rollback();

@@ -1,15 +1,20 @@
 package com.luv2code.hibernate.demo;
 
+import java.util.List;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
+import org.slf4j.Logger;
 
 import com.luv2code.hibernate.demo.entity.Student;
 
-public class CreateStudentDemo {
+public class QueryStudentDemo {
 
+	private static final Logger logger = org.slf4j.LoggerFactory.getLogger(QueryStudentDemo.class);
+	
 	public static void main(String[] args) {
-		
+
 		SessionFactory factory = new Configuration()
 				.configure()
 				.addAnnotatedClass(Student.class)
@@ -19,15 +24,21 @@ public class CreateStudentDemo {
 
 		try {
 			
-			Student student = new Student("Paul", "Weller", "paul@example.com");
 			session.getTransaction().begin();
-			session.save(student);
+			List<Student> students = session.createQuery("from Student").getResultList();
 			session.getTransaction().commit();
+			displayStudents(students);
 			
 		} catch (Exception e) {
 			session.getTransaction().rollback();
 		} finally {
 			factory.close();
+		}
+	}
+
+	private static void displayStudents(List<Student> students) {
+		for(Student student : students) {
+			logger.info(student.getFirstName());
 		}
 	}
 
