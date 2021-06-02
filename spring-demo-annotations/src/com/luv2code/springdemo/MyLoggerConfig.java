@@ -12,7 +12,7 @@ import org.springframework.context.annotation.PropertySource;
 
 
 @Configuration
-@PropertySource("classpath:sport.properties")
+@PropertySource("classpath:logging.properties")
 public class MyLoggerConfig {
 
 	@Value("${logging.root.level}")
@@ -31,6 +31,8 @@ public class MyLoggerConfig {
 
 	@PostConstruct
 	public void initLogger() {
+		
+		System.out.println(String.format("%s - initLogger()", this.getClass()));
 
 		// parse levels
 		Level rootLevel = Level.parse(rootLoggerLevel);

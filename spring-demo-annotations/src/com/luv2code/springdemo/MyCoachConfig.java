@@ -13,6 +13,11 @@ public class MyCoachConfig {
 	
 	@Bean
 	public Coach gymCoach() {
-		return new GymCoach(sadFortuneService());
+		return new GymCoach(new RandomFortuneService());
 	}
+	
+//	@Bean
+//	public Coach tennisCoach() {
+//		return new TennisCoach();
+//	}
 }

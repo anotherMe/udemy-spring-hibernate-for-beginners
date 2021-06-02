@@ -17,8 +17,9 @@ public class TennisCoach implements Coach {
 	}
 
 	@Autowired
-	@Qualifier("randomFortuneService")
+	@Qualifier("sadFortuneService")
 	public void setFortuneService(FortuneService theFortuneService) {
+		System.out.println(">> TennisCoach - inside setFortuneService method");
 		fortuneService = theFortuneService;
 	}
 	
